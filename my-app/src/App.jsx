@@ -3,6 +3,7 @@ import {
     Route,
     Switch,
     BrowserRouter,
+    Link
 } from "react-router-dom"
 
 import ToDoList from './components/ToDoList/View';
@@ -14,13 +15,13 @@ class App extends Component {
 
         return (
             <div className="App">
-                <nav>
-                    <div>
-                        <a href="/todolist">todos</a>
-                        <a href="/workers">workers</a>
-                    </div>
-                </nav>
                 <BrowserRouter>
+                    <nav>
+                        <div>
+                            <Link to="/todolist">todos</Link>
+                            <Link to="/workers">workers</Link>
+                        </div>
+                    </nav>
                     <Switch>
                         <Route path="/todolist">
                             <ToDoList/>
