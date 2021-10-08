@@ -1,0 +1,30 @@
+{
+  "todos": [
+    {
+      "title": "sd",
+      "completed": false,
+      "id": 1
+    },
+    {
+      "title": "te",
+      "completed": false,
+      "id": 4
+    }
+  ],
+  "workers": [
+    {
+      "id": 1,
+      "name": "Jordan",
+      "lastName": "Walke",
+      "daysWorked": "5",
+      "price": "2000"
+    },
+    {
+      "id": 2,
+      "name": "Evan",
+      "lastName": "You",
+      "daysWorked": 7,
+      "price": "3000"
+    }
+  ]
+}

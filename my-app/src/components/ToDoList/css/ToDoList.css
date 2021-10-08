@@ -1,0 +1,128 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font: 22px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    line-height: 1.2em;
+    background: linear-gradient(to right, #4e65d4 0%, #293dcb 19%, #4246a5 60%, #505ac2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    -webkit-padding-start: 0;
+}
+
+.btn {
+    cursor: pointer;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 2em;
+    background: none;
+    border: 1px solid #fff;
+    transition: 250ms ease-out;
+}
+
+.btn-danger:hover {
+    color: #fff;
+    background: #e74c3c;
+}
+
+.btn-success:hover {
+    color: #fff;
+    background: #05b437;
+}
+
+.btn:focus {
+    color: #fff;
+    outline: none;
+}
+
+.container {
+    width: 400px;
+    min-height: 500px;
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6);
+    position: relative;
+    border-radius: 1em;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+}
+.header h2 {
+    margin: 0;
+}
+
+.task-count {
+    align-self: center;
+}
+
+.todo-list:first-of-type {
+    border-top: 1px solid #f5f4f4;
+}
+
+.list-item-view {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-text {
+    height: 40px;
+    font-size: 15px;
+    border: 1px solid #dce4ec;
+    width: 100%;
+    margin-right: 15px;
+    border-radius: 2em;
+    padding: 5px 10px;
+    transition: border 250ms ease-out;
+}
+
+.input-text:focus {
+    border: 1px solid;
+    outline: none;
+}
+
+
+.completed {
+    text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.list-item-view label:hover {
+    cursor: pointer;
+}
+.list-item-view label {
+    color: #e6ff01;
+}
+.list-item-view label.completed {
+    color: #00f204;
+}
+
+#todos {
+    max-height: 500px;
+    overflow: auto;
+}
