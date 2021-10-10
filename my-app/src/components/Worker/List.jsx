@@ -1,6 +1,7 @@
 import {useEffect, useState} from "react";
 import './css/List.css';
 import Loader from "../Loader/Loader";
+import Items from "./Items";
 
 const resource = 'http://localhost:3004'
 
@@ -45,17 +46,6 @@ export default function WorkerList() {
             .then(res => res.json())
     }
 
-    const items = workers.map((worker, index) =>
-        <tr key={index}>
-            <td>{worker.name}</td>
-            <td>{worker.lastName}</td>
-            <td><input type="number" value={worker.daysWorked}
-                       onChange={(e) => setDays({days: e.target.value, worker})}/></td>
-            <td><input type="number" value={worker.price} onChange={(e) => setPrice({price: e.target.value, worker})}/>
-            </td>
-            <td>{worker.daysWorked * worker.price}</td>
-        </tr>
-    );
     return loading && <Loader/> || <>
         <div className="header m-b-20">
             <h2>Workers</h2>
@@ -71,7 +61,7 @@ export default function WorkerList() {
             </tr>
             </thead>
             <tbody>
-            {items}
+             <Items workers={workers} setDays={setDays} setPrice={setPrice}/>
             </tbody>
         </table>
     </>

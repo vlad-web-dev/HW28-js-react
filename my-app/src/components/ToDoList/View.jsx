@@ -38,35 +38,31 @@ export default function View() {
 
     //add task
     const addTask = async (task) => {
-        await fetch(`${resource}/todos`, {
+        const res = await fetch(`${resource}/todos`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(task)
         })
-            .then(res => res.json())
-            .then(data => {
-                setTodos([...todos, data])
-            })
+        const todo = await res.json()
+        setTodos([...todos, todo])
     }
 
     // change task
     const changeTask = async (task) => {
         task.completed = !task.completed
-        await fetch(`${resource}/todos/${task.id}`, {
+        const res = await fetch(`${resource}/todos/${task.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(task)
         })
-            .then(res => res.json())
-            .then(data => {
-                setTodos(
-                    todos.map((el) => el.id === task.id ? {...el, completed: data.completed} : el)
-                )
-            })
+        const todo = await res.json()
+        setTodos(
+            todos.map((el) => el.id === task.id ? {...el, completed: todo.completed} : el)
+        )
     }
 
     return (
